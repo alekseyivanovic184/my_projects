@@ -1,0 +1,179 @@
+==690== Memcheck, a memory error detector
+==690== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==690== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==690== Command: bin/main
+==690== Parent PID: 655
+==690== 
+--690-- 
+--690-- Valgrind options:
+--690--    --leak-check=full
+--690--    --show-leak-kinds=all
+--690--    --track-origins=yes
+--690--    --verbose
+--690--    --log-file=valgrind-out.txt
+--690-- Contents of /proc/version:
+--690--   Linux version 5.15.153.1-microsoft-standard-WSL2 (root@941d701f84f1) (gcc (GCC) 11.2.0, GNU ld (GNU Binutils) 2.37) #1 SMP Fri Mar 29 23:14:13 UTC 2024
+--690-- 
+--690-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--690-- Page sizes: currently 4096, max supported 4096
+--690-- Valgrind library directory: /usr/libexec/valgrind
+--690-- Reading syms from /workspaces/HW3_skeleton/bin/main
+--690-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--690--   Considering /usr/lib/debug/.build-id/b3/3a9ce38781b940e741fd85448861a71ff2297b.debug ..
+--690--   .. build-id is valid
+--690-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--690--    object doesn't have a dynamic symbol table
+--690-- Scheduler: using generic scheduler lock implementation.
+--690-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==690== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-690-by-???-on-82be5bf2a9a8
+==690== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-690-by-???-on-82be5bf2a9a8
+==690== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-690-by-???-on-82be5bf2a9a8
+==690== 
+==690== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==690== don't want to do, unless you know exactly what you're doing,
+==690== or are doing some strange experiment):
+==690==   /usr/bin/vgdb --pid=690 ...command...
+==690== 
+==690== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==690==   /path/to/gdb bin/main
+==690== and then give GDB the following command
+==690==   target remote | /usr/bin/vgdb --pid=690
+==690== --pid is optional if only one valgrind process is running
+==690== 
+--690-- REDIR: 0x402b2a0 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c6cda (???)
+--690-- REDIR: 0x4029c60 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c6cf4 (???)
+--690-- REDIR: 0x4029a30 (ld-linux-x86-64.so.2:index) redirected to 0x580c6d0f (???)
+--690-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--690-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==690== WARNING: new redirection conflicts with existing -- ignoring it
+--690--     old: 0x04029c60 (strcmp              ) R-> (0000.0) 0x580c6cf4 ???
+--690--     new: 0x04029c60 (strcmp              ) R-> (2016.0) 0x04852ed0 strcmp
+==690== WARNING: new redirection conflicts with existing -- ignoring it
+--690--     old: 0x0402b2a0 (strlen              ) R-> (0000.0) 0x580c6cda ???
+--690--     new: 0x0402b2a0 (strlen              ) R-> (2007.0) 0x04851b80 strlen
+--690-- REDIR: 0x4029090 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4857620 (mempcpy)
+--690-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--690--   Considering /usr/lib/debug/.build-id/5f/3f024b472f38389da3a2f567b3d0eaa8835ca2.debug ..
+--690--   .. build-id is valid
+--690-- REDIR: 0x402b440 (ld-linux-x86-64.so.2:strncmp) redirected to 0x4852680 (strncmp)
+--690-- REDIR: 0x491cab0 (libc.so.6:strnlen) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491cb40 (libc.so.6:strpbrk) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491ab10 (libc.so.6:strcmp) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4934020 (libc.so.6:wcsnlen) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4919b00 (libc.so.6:memset) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4933720 (libc.so.6:wcslen) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x49a37e0 (libc.so.6:__memcpy_chk) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4919a70 (libc.so.6:memrchr) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4933fc0 (libc.so.6:wcsncpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4918e90 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x49324f0 (libc.so.6:wcschr) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491aa00 (libc.so.6:index) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491cb70 (libc.so.6:rindex) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x49325a0 (libc.so.6:wcscmp) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4919d20 (libc.so.6:stpncpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4941660 (libc.so.6:wmemchr) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491c950 (libc.so.6:strncmp) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4919d80 (libc.so.6:strcasecmp) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491bd30 (libc.so.6:strcspn) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x49334f0 (libc.so.6:wcscpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491a990 (libc.so.6:strcat) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491c850 (libc.so.6:strncasecmp_l) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491aa80 (libc.so.6:strchrnul) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4918da0 (libc.so.6:bcmp) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491bcc0 (libc.so.6:strcpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4919e20 (libc.so.6:strcasecmp_l) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491c720 (libc.so.6:strlen) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491c9f0 (libc.so.6:strncpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x49416e0 (libc.so.6:wmemcmp) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x49a3900 (libc.so.6:__memmove_chk) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+==690== WARNING: new redirection conflicts with existing -- ignoring it
+--690--     old: 0x049f76d0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04857730 __memcpy_chk
+--690--     new: 0x049f76d0 (__memcpy_chk_avx_una) R-> (2024.0) 0x04857030 __memmove_chk
+--690-- REDIR: 0x4919cb0 (libc.so.6:stpcpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4919830 (libc.so.6:memmove) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+==690== Preferring higher priority redirection:
+--690--     old: 0x049f7700 (__memcpy_avx_unalign) R-> (2018.0) 0x048545a0 __memcpy_avx_unaligned_erms
+--690--     new: 0x049f7700 (__memcpy_avx_unalign) R-> (2018.1) 0x04856330 memmove
+--690-- REDIR: 0x4918d20 (libc.so.6:memchr) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491cd70 (libc.so.6:strspn) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4931f30 (libc.so.6:wcpncpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x4919950 (libc.so.6:mempcpy) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x491c7b0 (libc.so.6:strncasecmp) redirected to 0x483f1c0 (_vgnU_ifunc_wrapper)
+--690-- REDIR: 0x49fc330 (libc.so.6:__strrchr_avx2) redirected to 0x4851360 (rindex)
+--690-- REDIR: 0x4914c60 (libc.so.6:malloc) redirected to 0x48487e0 (malloc)
+--690-- REDIR: 0x49f8100 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48561f0 (memset)
+--690-- REDIR: 0x49f9ae0 (libc.so.6:__strchrnul_avx2) redirected to 0x48570b0 (strchrnul)
+--690-- REDIR: 0x49f7700 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4856330 (memmove)
+--690-- REDIR: 0x49f76c0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x48571e0 (mempcpy)
+--690-- REDIR: 0x49fa480 (libc.so.6:__strlen_avx2) redirected to 0x4851a60 (strlen)
+==690== Invalid read of size 4
+==690==    at 0x109C44: print_game_state (connect4.c:189)
+==690==    by 0x10ADD5: main (main.c:27)
+==690==  Address 0x14 is not stack'd, malloc'd or (recently) free'd
+==690== 
+==690== 
+==690== Process terminating with default action of signal 11 (SIGSEGV)
+==690==  Access not within mapped region at address 0x14
+==690==    at 0x109C44: print_game_state (connect4.c:189)
+==690==    by 0x10ADD5: main (main.c:27)
+==690==  If you believe this happened as a result of a stack
+==690==  overflow in your program's main thread (unlikely but
+==690==  possible), you can try to increase the size of the
+==690==  main thread stack using the --main-stacksize= flag.
+==690==  The main thread stack size used in this run was 8388608.
+==690== 
+==690== HEAP SUMMARY:
+==690==     in use at exit: 2,114 bytes in 4 blocks
+==690==   total heap usage: 4 allocs, 0 frees, 2,114 bytes allocated
+==690== 
+==690== Searching for pointers to 4 not-freed blocks
+==690== Checked 106,840 bytes
+==690== 
+==690== 24 bytes in 1 blocks are still reachable in loss record 1 of 4
+==690==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==690==    by 0x109284: init_game_state (connect4.c:11)
+==690==    by 0x10AD3F: main (main.c:13)
+==690== 
+==690== 42 bytes in 1 blocks are still reachable in loss record 2 of 4
+==690==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==690==    by 0x109299: init_game_state (connect4.c:13)
+==690==    by 0x10AD3F: main (main.c:13)
+==690== 
+==690== 1,024 bytes in 1 blocks are still reachable in loss record 3 of 4
+==690==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==690==    by 0x48EC3D6: _IO_file_doallocate (filedoalloc.c:101)
+==690==    by 0x48FC833: _IO_doallocbuf (genops.c:374)
+==690==    by 0x48FA2BF: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+==690==    by 0x48FADDF: _IO_new_file_xsputn (fileops.c:1244)
+==690==    by 0x48FADDF: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+==690==    by 0x48C5A18: __printf_buffer_flush_to_file (printf_buffer_to_file.c:59)
+==690==    by 0x48C5A18: __printf_buffer_to_file_done (printf_buffer_to_file.c:120)
+==690==    by 0x48D145A: __vfprintf_internal (vfprintf-internal.c:1545)
+==690==    by 0x48C4EF2: printf (printf.c:33)
+==690==    by 0x10944B: print_available_moves (connect4.c:45)
+==690==    by 0x10AD58: main (main.c:18)
+==690== 
+==690== 1,024 bytes in 1 blocks are still reachable in loss record 4 of 4
+==690==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==690==    by 0x48EC3D6: _IO_file_doallocate (filedoalloc.c:101)
+==690==    by 0x48FC833: _IO_doallocbuf (genops.c:374)
+==690==    by 0x48F9B83: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+==690==    by 0x48FC8E1: _IO_default_uflow (genops.c:389)
+==690==    by 0x10AD8C: main (main.c:22)
+==690== 
+==690== LEAK SUMMARY:
+==690==    definitely lost: 0 bytes in 0 blocks
+==690==    indirectly lost: 0 bytes in 0 blocks
+==690==      possibly lost: 0 bytes in 0 blocks
+==690==    still reachable: 2,114 bytes in 4 blocks
+==690==         suppressed: 0 bytes in 0 blocks
+==690== 
+==690== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==690== 
+==690== 1 errors in context 1 of 1:
+==690== Invalid read of size 4
+==690==    at 0x109C44: print_game_state (connect4.c:189)
+==690==    by 0x10ADD5: main (main.c:27)
+==690==  Address 0x14 is not stack'd, malloc'd or (recently) free'd
+==690== 
+==690== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

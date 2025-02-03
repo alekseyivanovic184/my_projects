@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "connect4.h": "c",
+        "interface.h": "c",
+        "tree.h": "c",
+        "game_bot.h": "c"
+    }
+}
